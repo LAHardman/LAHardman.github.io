@@ -96,19 +96,25 @@ function handlePMSStarted(status) {
     if (status) {
         let data = {
             pmsStarted: status,
-            pmsStartDate: new Date(),
-            flowData: []
+            pmsStartDate: new Date()
         };
         saveData(data, 'askBleeding');
     }
 }
 
+
 // Handle Bleeding Started
 function handleBleedingStarted(status) {
     if (status) {
-        updateCurrentPeriod({ bleedingStarted: status, bleedingStartDate: new Date() }, 'askFlowAmount');
+        let data = {
+            bleedingStarted: status,
+            bleedingStartDate: new Date(),
+            flowData: []
+        };
+        saveData(data, 'askFlowAmount');
     }
 }
+
 
 // Handle Flow Amount
 function handleFlowAmount() {
@@ -200,17 +206,20 @@ function groupDataByPeriod(periods) {
     let currentPeriod = null;
 
     periods.forEach(data => {
-        // If we have a PMS start and no active period, start a new period
-        if (data.pmsStarted && !currentPeriod) {
+        // If we have a bleeding start and no active period, start a new period
+        if (data.bleedingStarted && !currentPeriod) {
             currentPeriod = {
-                pmsStartDate: data.pmsStartDate,
+                bleedingStartDate: data.bleedingStartDate,
                 days: []
             };
         }
 
-        // If we have an active period and bleeding data, add it to the period
-        if (currentPeriod && data.bleedingStarted) {
-            currentPeriod.days.push(data);
+        // If we have an active period, add the flow data to the period
+        if (currentPeriod) {
+            currentPeriod.days.push({
+                date: data.date,
+                flowAmount: data.flowAmount
+            });
         }
 
         // If we have an active period and it's the end, close off the period
