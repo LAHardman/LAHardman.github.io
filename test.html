@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Period Tracker</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header id="Title">Period Tracker</header>
+
+    <main id="contentArea">
+        <!-- Default Content -->
+        <div id="defaultContent">
+            Welcome to your personal period tracker. Click on the options below to navigate.
+        </div>
+
+        <!-- Track Page Content -->
+        <div id="trackPage" class="hiddenPage">
+
+            <!-- Ask if PMS started -->
+            <div id="askPMS">
+                <h2>Has PMS started?</h2>
+                <button onclick="handlePMSStarted(true)">Yes</button>
+                <button onclick="handlePMSStarted(false)">No</button>
+            </div>
+
+            <!-- Ask if Bleeding started -->
+            <div id="askBleeding" class="hiddenPage">
+                <h2>Has Bleeding started?</h2>
+                <button onclick="handleBleedingStarted(true)">Yes</button>
+                <button onclick="handleBleedingStarted(false)">No</button>
+            </div>
+
+            <!-- Ask about Flow amount -->
+            <div id="askFlowAmount" class="hiddenPage">
+                <h2>Amount of Flow:</h2>
+                <select id="flowAmount">
+                    <option value="light">Light</option>
+                    <option value="medium">Medium</option>
+                    <option value="heavy">Heavy</option>
+                </select>
+                <button onclick="handleFlowAmount()">Submit</button>
+            </div>
+
+            <!-- Ask if Flow has stopped -->
+            <div id="askFlowStopped" class="hiddenPage">
+                <h2>Has the flow stopped?</h2>
+                <button onclick="handleFlowStopped(true)">Yes</button>
+                <button onclick="handleFlowStopped(false)">No</button>
+            </div>
+
+        </div>
+        <!-- History Page Content -->
+        <div id="historyPage" class="hiddenPage">
+            <h2>Period History</h2>
+            <div id="historyContent">
+                <!-- History data will be populated here -->
+            </div>
+        </div>
+        <div id="settingsPage" class="hiddenPage">
+            <!-- Other settings can go here -->
+
+            <h2>Manage Data</h2>
+            <button onclick="clearHistory()">Clear Period History</button>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <nav>
+            <a href="javascript:void(0)" data-title="Track Page"><img src="track-icon.webp" alt="Track" />Track</a>
+            <a href="javascript:void(0)" data-title="Predict Page"><img src="predict-icon.webp"
+                    alt="Predict" />Predict</a>
+            <a href="javascript:void(0)" data-title="History Page"><img src="history-icon.webp"
+                    alt="History" />History</a>
+            <a href="javascript:void(0)" data-title="Settings Page"><img src="Settings-icon.webp"
+                    alt="Settings" />Settings</a>
+        </nav>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+/* General Styles */
+body {
+    background-color: #181818; /* A darker background */
+    color: #E0E0E0; /* A softer white for text */
+    font-size: calc(1em + 1vw); /* Base font size + a scaling factor based on viewport width */
+    line-height: 1.5;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 45px;
+    line-height: 45px; /* vertically centering text in the header */
+    text-align: center; /* centering header text */
+}
+
+header, footer {
+    width: 100%;
+    background-color: #222; /* Slightly lighter than the body background */
+    overflow: auto;
+    color: #E0E0E0; /* A softer white */
+    font-weight: bold;
+}
+
+footer {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+nav {
+    display: flex; /* Convert the nav to a flex container */
+    justify-content: center; /* Center the child elements horizontally */
+}
+
+nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #E0E0E0;
+    font-size: 14px; /* Set a fixed font size for the links */
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #3A3A3A;
+    color: #B0B0B0; /* Change hover color to a lighter gray */
+}
+
+nav a img {
+    margin-bottom: 5px; /* Add some space between the image and the text */
+    border-radius: 5px;
+    width: 20px;
+    display: block; /* Set images to block to avoid any inline whitespace issues */
+    transition: background-color 0.3s; /* Smooth transition for hover effects */
+}
+
+nav a:hover img {
+    background-color: #555;
+}
+
+main {
+    padding: 60px 20px; /* Provide spacing for the fixed header and some side padding */
+    max-width: 800px; /* Limit the width for better readability */
+    margin: auto; /* Center the main content area */
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #3A3A3A;
+    border: none;
+    border-radius: 5px;
+    color: #B0B0B0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Hidden content */
+.hiddenPage {
+    display: none;
+}
+
+.period-entry {
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.period-summary {
+    padding: 10px;
+    background-color: #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.period-details {
+    padding: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.expand-icon {
+    /* Styling for the expand icon */
+    background-color: #ddd;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+#settingsPage button {
+    background-color: #e74c3c; /* Red Color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#settingsPage button:hover {
+    background-color: #c0392b; /* Darker Red */
+}
