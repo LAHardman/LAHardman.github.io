@@ -115,16 +115,10 @@ function handleBleedingStarted(status) {
     }
 }
 
-
 // Handle Flow Amount
-function handleFlowAmount() {
-    let flow = document.getElementById('flowAmount').value;
-    if (flow) {
-        let flowData = { date: new Date(), flowAmount: flow };
-        updateCurrentPeriod({ flowData: flowData }, 'askFlowStopped');
-    } else {
-        console.error("Flow data not captured");
-    }
+function handleFlowAmount(flow) {
+    let flowData = { date: new Date(), flowAmount: flow };
+    updateCurrentPeriod({ flowData: flowData }, 'askFlowStopped');
 }
 
 // Update the current period with new data
@@ -271,7 +265,7 @@ function displayHistory() {
         // Now process each grouped period
         let historyHTML = groupedPeriods.map(period => {
             let pmsStartDate = period.pmsStartDate ? new Date(period.pmsStartDate).toLocaleDateString() : 'N/A';
-            let bleedingStartDate = period.days[0] && period.days[0].bleedingStarted ? new Date(period.days[0].bleedingStartDate).toLocaleDateString() : 'N/A';
+            let bleedingStartDate = period.bleedingStartDate ? new Date(period.bleedingStartDate).toLocaleDateString() : 'N/A';
 
             // Loop through all the days of a period and capture flow amounts
             let flowAmounts = period.days.map(day => day.flowAmount).filter(Boolean).join(", ");
