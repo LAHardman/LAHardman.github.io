@@ -93,7 +93,7 @@ button:hover {
     margin-right: auto; /* Centering */
     margin-left: auto; /* Centering */
     border-radius: 12px;
-    max-width: 70%;
+    max-width: 50%;
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
     transition: transform 0.3s;
@@ -193,7 +193,7 @@ nav a:hover {
 
 nav a img {
     border-radius: 5px;
-    width: 5%;
+    width: 40%;
     display: block;
     transition: background-color 0.3s;
 }
@@ -204,7 +204,7 @@ nav a:hover img {
 
 @media (max-width: 600px) { /* Adjust the max-width as needed */
     .card {
-        width: 95%; /* Reduce width to fit small screens */
+        width: 90%; /* Reduce width to fit small screens */
         margin: 10px; /* Add some margin */
         padding: 10px; /* Reduce padding */
     }
