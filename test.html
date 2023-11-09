@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -20,53 +20,166 @@
         </div>
 
         <!-- Track Page Content -->
-        <div id="trackPage" class="hiddenPage">
+        <div id="trackPage" class="invisible page">
 
             <!-- Ask if PMS started -->
-            <div id="askPMS">
+            <div class="card" id="askPMS">
                 <h2>Has PMS started?</h2>
-                <button onclick="handlePMSStarted(true)">Yes</button>
-                <button onclick="handlePMSStarted(false)">No</button>
+                <div class="button-container">
+                    <button onclick="handlePMSStarted(true)">Yes</button>
+                    <button onclick="handlePMSStarted(false)">No</button>
+                </div>
             </div>
 
             <!-- Ask if Bleeding started -->
-            <div id="askBleeding" class="hiddenPage">
+            <div class="card invisible" id="askBleeding">
                 <h2>Has Bleeding started?</h2>
-                <button onclick="handleBleedingStarted(true)">Yes</button>
-                <button onclick="handleBleedingStarted(false)">No</button>
+                <div class="button-container">
+                    <button onclick="handleBleedingStarted(true)">Yes</button>
+                    <button onclick="handleBleedingStarted(false)">No</button>
+                </div>
             </div>
 
             <!-- Ask about Flow amount -->
-            <div id="askFlowAmount" class="hiddenPage">
+            <div class="card invisible" id="askFlowAmount">
                 <h2>Amount of Flow:</h2>
-                <select id="flowAmount">
-                    <option value="light">Light</option>
-                    <option value="medium">Medium</option>
-                    <option value="heavy">Heavy</option>
-                </select>
-                <button onclick="handleFlowAmount()">Submit</button>
+                <div class="button-container">
+                    <select title= "Amount of Flow" id="flowAmount">
+                        <option value="light">Light</option>
+                        <option value="medium">Medium</option>
+                        <option value="heavy">Heavy</option>
+                    </select>
+                    <button onclick="handleFlowAmount()">Submit</button>
+                </div>
             </div>
 
             <!-- Ask if Flow has stopped -->
-            <div id="askFlowStopped" class="hiddenPage">
+            <div class="card invisible" id="askFlowStopped">
                 <h2>Has the flow stopped?</h2>
-                <button onclick="handleFlowStopped(true)">Yes</button>
-                <button onclick="handleFlowStopped(false)">No</button>
+                <div class="button-container">
+                    <button type="button" onclick="handleFlowStopped(true)">Yes</button>
+                    <button type="button" onclick="handleFlowStopped(false)">No</button>
+                </div>
+            </div>
+
+            <!-- Emotions Tracking Card -->
+            <div class="card invisible" id="emotionsCard">
+                <h2>How are you feeling today?</h2>
+                <div class="button-container">
+                    <select title="Today's Emotion" id="emotionSelect">
+                        <option value="happy">Happy</option>
+                        <option value="sad">Sad</option>
+                        <option value="angry">Angry</option>
+                        <!-- Add other emotions as needed -->
+                    </select>
+                    <button type="submit" onclick="handleEmotion()">Submit</button>
+                </div>
+            </div>
+
+            <!-- Bowl Movements Tracking Card -->
+            <div class="card invisible" id="bowlMovementsCard">
+                <h2>Number of Bowl Movements</h2>
+                <div class="button-container">
+                    <input title="Number of Bowl Movements" type="number" id="bowlMovementsCount" min="0">
+                    <button onclick="handleBowlMovements()">Submit</button>
+                </div>
+            </div>
+
+            <!-- Appetite Tracking Card -->
+            <div class="card invisible" id="appetiteCard">
+                <h2>Rate your Appetite</h2>
+                <div class="button-container">
+                    <select title= "Appetite" id="appetiteSelect">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <button type="submit" onclick="handleAppetite()">Submit</button>
+                </div>
             </div>
 
         </div>
+
         <!-- History Page Content -->
-        <div id="historyPage" class="hiddenPage">
-            <h2>Period History</h2>
+        <div id="historyPage" class="invisible page">
+            <div id="sortAndSearchBar">
+                <div id="searchAndSortContainer">
+                    <input type="text" id="searchInput" placeholder="Search" oninput="handleSearch()">
+                    <div id="sortContainer" onclick="toggleSort()">
+                        <img src="sort-icon.webp" alt="Sort" class="sort-icon">
+                    </div>
+                </div>
+            </div>
+            
             <div id="historyContent">
+                <h2>No history data available</h2>
                 <!-- History data will be populated here -->
             </div>
         </div>
-        <div id="settingsPage" class="hiddenPage">
-            <!-- Other settings can go here -->
 
-            <h2>Manage Data</h2>
-            <button onclick="clearHistory()">Clear Period History</button>
+        <!-- Predict Page Content -->
+        <div id="predictPage" class="invisible page">
+            <h2>Period Prediction</h2>
+            <div class="card prediction-card">
+                <div class="prediction-item">
+                    <p class="prediction-title">PMS Start Date</p>
+                    <p class="prediction-value" id="predictedPMSStartDate"></p>
+                </div>
+                <div class="prediction-item">
+                    <p class="prediction-title">Period Start Date</p>
+                    <p class="prediction-value" id="predictedPeriodStartDate"></p>
+                </div>
+                <div class="prediction-item">
+                    <p class="prediction-title">Expected Flow</p>
+                    <p class="prediction-value" id="predictedFlow"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Page Content -->
+        <div id="settingsPage" class="invisible page">
+            <h2>Settings</h2>
+            <!-- Manage Data Section -->
+            <div id="manageDataSection">
+                <h2>Manage Data</h2>
+                <button onclick="clearHistory()">Clear Period History</button>
+            </div>
+            <!-- Tracking Options Section -->
+            <div id="trackingOptionsSection">
+                <h2>Tracking Options</h2>
+                <label><input type="checkbox" id="trackEmotions" onchange="toggleTrackingOption('trackEmotions')">
+                    Emotions</label>
+                <label><input type="checkbox" id="trackBowlMovements"
+                        onchange="toggleTrackingOption('trackBowlMovements')"> Bowl Movements</label>
+                <label><input type="checkbox" id="trackAppetite" onchange="toggleTrackingOption('trackAppetite')">
+                    Appetite</label>
+            </div>
+            <!-- Past Data Input Section -->
+            <div id="pastDataInput">
+                <h2>Input Past Period Data</h2>
+                <div>
+                    <label for="pastPMSStartDate">PMS Start Date:</label>
+                    <input type="date" id="pastPMSStartDate">
+                </div>
+                <div>
+                    <label for="pastBleedingStartDate">Bleeding Start Date:</label>
+                    <input type="date" id="pastBleedingStartDate">
+                </div>
+                <div>
+                    <label for="pastFlowAmount">Flow Amount:</label>
+                    <select id="pastFlowAmount">
+                        <option value="light">Light</option>
+                        <option value="medium">Medium</option>
+                        <option value="heavy">Heavy</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="pastPeriodEndDate">Period End Date:</label>
+                    <input type="date" id="pastPeriodEndDate">
+                </div>
+                <button type="submit" onclick="handlePastDataInput()">Submit Past Data</button>
+            </div>
+
         </div>
 
 
@@ -83,6 +196,7 @@
                     alt="Settings" />Settings</a>
         </nav>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script src="script.js"></script>
 </body>
 

@@ -1,27 +1,30 @@
-/* General Styles */
 body {
-    background-color: #181818; /* A darker background */
-    color: #E0E0E0; /* A softer white for text */
-    font-size: calc(1em + 1vw); /* Base font size + a scaling factor based on viewport width */
+    background-color: #181818;
+    color: #E0E0E0;
+    font-size: 1em;
     line-height: 1.5;
+    font-family: 'Arial', sans-serif;
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+}
+
+header, footer {
+    width: 100%;
+    background-color: #222;
+    overflow: hidden;
+    color: #E0E0E0;
+    font-weight: bold;
 }
 
 header {
+    z-index: 10;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     height: 45px;
-    line-height: 45px; /* vertically centering text in the header */
-    text-align: center; /* centering header text */
-}
-
-header, footer {
-    width: 100%;
-    background-color: #222; /* Slightly lighter than the body background */
-    overflow: auto;
-    color: #E0E0E0; /* A softer white */
-    font-weight: bold;
+    line-height: 45px;
+    text-align: center;
 }
 
 footer {
@@ -31,11 +34,140 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
+    height: 70px;
+    line-height: 45px; /* vertically centering text in the footer */
 }
 
+main {
+    padding-top: 55px; /* Adjusted to account for the header */
+    padding-bottom: 55px; /* Adjusted to account for the footer */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 45px - 45px);
+    width: 100%; /* Ensure it takes full width */
+}
+
+#contentArea {
+    width: 100%; /* Ensure it takes full width */
+    max-width: 1000px; /* Set a maximum width for better readability */
+    margin: 0 auto; /* Center the content */
+    padding: 0 20px; /* Horizontal padding for inner content */
+}
+
+h2 {
+    font-size: 1em;
+}
+
+/* General Button Styles */
+button {
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    background-color: #3A3A3A;
+    border: none;
+    border-radius: 5px;
+    color: #B0B0B0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Card Styles */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    margin-right: auto; /* Centering */
+    margin-left: auto; /* Centering */
+    border-radius: 12px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
+    transition: transform 0.3s;
+    transform-origin: top center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h2 {
+    align-self: flex-start;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 10px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+select {
+    font-size: 0.9rem;
+    appearance: none;
+    background-color: #3A3A3A;
+    border: none;
+    color: #E0E0E0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 10px 10px;
+}
+
+select:hover {
+    background-color: #555;
+}
+
+input[type="number"] {
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    background-color: #3A3A3A;
+    border: none;
+    color: #E0E0E0;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+    appearance: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="number"]:hover {
+    background-color: #555;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+input[type="number"]::-moz-focus-inner {
+    border: 0;
+}
+
+/* Footer Navigation Styles */
 nav {
-    display: flex; /* Convert the nav to a flex container */
-    justify-content: center; /* Center the child elements horizontally */
+    display: flex;
+    justify-content: center;
 }
 
 nav a {
@@ -46,95 +178,296 @@ nav a {
     padding: 12px 20px;
     text-decoration: none;
     color: #E0E0E0;
-    font-size: 14px; /* Set a fixed font size for the links */
+    font-size: 14px;
     transition: background-color 0.3s;
 }
 
 nav a:hover {
     background-color: #3A3A3A;
-    color: #B0B0B0; /* Change hover color to a lighter gray */
+    color: #B0B0B0;
 }
 
 nav a img {
-    margin-bottom: 5px; /* Add some space between the image and the text */
     border-radius: 5px;
     width: 20px;
-    display: block; /* Set images to block to avoid any inline whitespace issues */
-    transition: background-color 0.3s; /* Smooth transition for hover effects */
+    display: block;
+    transition: background-color 0.3s;
 }
 
 nav a:hover img {
     background-color: #555;
 }
 
-main {
-    padding: 60px 20px; /* Provide spacing for the fixed header and some side padding */
-    max-width: 800px; /* Limit the width for better readability */
-    margin: auto; /* Center the main content area */
+.visible {
+    display: block !important;
 }
 
-/* Form Styles */
-.form-group {
+.invisible {
+    display: none !important;
+    visibility: hidden !important; /* Ensure content is hidden */
+}
+
+.page {
+    padding-top: 60px;
+    padding-bottom: 70px;
+    max-height: calc(100vh - 130px); /* Adjusted to account for the fixed header and footer */
+    overflow-y: auto;
+    width: 100%; /* Ensure it takes full width */
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.page::-webkit-scrollbar {
+    display: none;
+}
+
+/* Label styles */
+label {
+    display: flex;
+    align-items: center; /* Aligns the text vertically in the middle */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="date"],
+input[type="date"]:hover,
+input[type="date"]:focus {
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    background-color: #3A3A3A;
+    border: none;
+    color: #E0E0E0;
+    border-radius: 5px;
+    width: 95%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    appearance: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+#pastDataInput {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+#pastDataInput div {
     margin-bottom: 20px;
 }
 
-button {
-    padding: 10px 15px;
-    background-color: #3A3A3A;
-    border: none;
-    border-radius: 5px;
-    color: #B0B0B0;
-    cursor: pointer;
-    transition: background-color 0.2s;
+/* Settings Page Title */
+#settingsPage h2, #predictPage h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2rem;
 }
 
-button:hover {
-    background-color: #555;
-}
-
-/* Hidden content */
-.hiddenPage {
-    display: none;
-}
-
-.period-entry {
-    border: 1px solid #ccc;
-    margin: 5px 0;
-    cursor: pointer;
-}
-
-.period-summary {
-    padding: 10px;
-    background-color: #eee;
-    display: flex;
-    justify-content: space-between;
-}
-
-.period-details {
-    padding: 10px;
-}
-
-.hidden {
-    display: none;
-}
-
-.expand-icon {
-    /* Styling for the expand icon */
-    background-color: #ddd;
-    padding: 2px 5px;
-    border-radius: 3px;
-}
-
+/* Adjust margin for buttons within the settings page */
 #settingsPage button {
-    background-color: #e74c3c; /* Red Color */
-    color: white;
-    padding: 10px 15px;
-    border: none;
+    margin-top: 10px;
+}
+
+/* Style for checkboxes */
+input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #3A3A3A;
+    border: 2px solid #E0E0E0;
     border-radius: 4px;
     cursor: pointer;
+    position: relative;
+    outline: none;
+    margin-top: 9px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #E0E0E0;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 6px;
+    height: 12px;
+    border: solid #181818;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Custom Search Bar Styles */
+#searchBar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 20px auto; /* Centering and margin at bottom */
+}
+
+#searchInput {
+    flex: 1; /* Take available space */
+    padding: 10px;
+    border-radius: 5px 0 0 5px; /* Rounded corners on the left */
+    border: 1px solid #444; /* Dark border */
+    background-color: #2a2a2a; /* Dark background */
+    color: #E0E0E0; /* Light text */
+    font-size: 1rem;
+    height: 100%; /* Ensure full height */
+}
+
+/* Card Styles */
+.period-entry {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #444;
+}
+
+.period-entry:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Details Toggle Styles */
+.toggle-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('path_to_your_icon.png');
+    transition: transform 0.3s ease;
+}
+
+/* Add these new classes to your CSS */
+.period-entry-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out; /* Adjust timing as needed */
+    padding: 0 15px;
+    border-top: 1px solid #444;
+}
+
+.period-entry-details-expanded {
+    max-height: 10em;  /* or any other value that works for your content */
+    padding: 10px 15px;
+}
+
+#historyContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 20px;
+}
+
+#sortAndSearchBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#searchAndSortContainer {
+    display: flex;
+    border: 1px solid #444;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 20px auto; /* Centering and margin at bottom */
+    align-items: center; /* Center-align children vertically */
+    position: relative; /* Relative positioning for this container */
+}
+
+#sortContainer {
+    border-left: 1px solid #444;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Center the icon vertically */
+    border-radius: 0 5px 5px 0; /* Round right corners to match container */
+    background-color: #2a2a2a; /* Match background color of searchInput */
+}
+
+.sort-icon {
+    transition: transform 0.3s; /* smooth transition */
+    width: 20px;
+    height: 20px;
+}
+
+.sort-icon-flipped {
+    width: 20px;
+    height: 20px;
+    transform: rotate(180deg); /* flip the icon */
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%; /* Position dropdown right below the container */
+    right: 0; /* Align dropdown to the right side */
+    margin-top: -1px; /* Adjust margin to cover border */
+}
+
+.dropdown-content {
+    right: 10px;
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #2a2a2a; /* Updated to match dark theme */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden; /* Added for rounded corners */
+}
+
+.dropdown-content a {
+    color: #E0E0E0; /* Updated to match dark theme */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
     transition: background-color 0.3s;
 }
 
-#settingsPage button:hover {
-    background-color: #c0392b; /* Darker Red */
+.dropdown-content a:hover {
+    background-color: #444; /* Updated to match dark theme */
+}
+
+.show {
+    display: block;
+}
+
+.prediction-card {
+    margin-top: 20px; /* or whatever margin you prefer */
+}
+
+.prediction-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #444; /* Dark border between items */
+    padding: 10px 0; /* Padding to space out the items */
+    width: 100%; /* Full width of parent */
+}
+
+.prediction-title {
+    color: #B0B0B0; /* Lighter text for the title */
+    font-weight: bold;
+}
+
+.prediction-value {
+    color: #E0E0E0; /* Standard text color for the values */
+}
+
+/* Last item should not have a border */
+.prediction-card .prediction-item:last-child {
+    border-bottom: none;
 }
