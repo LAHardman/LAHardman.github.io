@@ -35,7 +35,11 @@ footer {
     left: 0;
     right: 0;
     height: 70px;
-    line-height: 45px; /* vertically centering text in the footer */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center content vertically */
+    background: #2a2a2a; /* Example background color for visibility */
+    color: white; /* Example text color for visibility */
 }
 
 main {
@@ -51,7 +55,7 @@ main {
 
 #contentArea {
     width: 100%; /* Ensure it takes full width */
-    max-width: 1000px; /* Set a maximum width for better readability */
+    max-width: 80%; /* Set a maximum width for better readability */
     margin: 0 auto; /* Center the content */
     padding: 0 20px; /* Horizontal padding for inner content */
 }
@@ -89,7 +93,7 @@ button:hover {
     margin-right: auto; /* Centering */
     margin-left: auto; /* Centering */
     border-radius: 12px;
-    max-width: 400px;
+    max-width: 70%;
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
     transition: transform 0.3s;
@@ -143,7 +147,7 @@ input[type="number"] {
     border: none;
     color: #E0E0E0;
     border-radius: 5px;
-    width: 100px;
+    width: 10%;
     text-align: center;
     appearance: none;
     cursor: pointer;
@@ -189,7 +193,7 @@ nav a:hover {
 
 nav a img {
     border-radius: 5px;
-    width: 20px;
+    width: 5%;
     display: block;
     transition: background-color 0.3s;
 }
@@ -197,6 +201,29 @@ nav a img {
 nav a:hover img {
     background-color: #555;
 }
+
+@media (max-width: 600px) { /* Adjust the max-width as needed */
+    .card {
+        width: 95%; /* Reduce width to fit small screens */
+        margin: 10px; /* Add some margin */
+        padding: 10px; /* Reduce padding */
+    }
+
+    nav a {
+        padding: 8px 10px; /* Reduce padding on small screens */
+        font-size: 12px; /* Adjust font size */
+    }
+
+    nav a img {
+        width: 16px; /* Adjust image size */
+    }
+
+    /* Adjust footer layout */
+    footer {
+        font-size: 12px; /* Smaller text in footer */
+    }
+}
+
 
 .visible {
     display: block !important;
