@@ -203,6 +203,9 @@ nav a:hover img {
 }
 
 @media (max-width: 600px) { /* Adjust the max-width as needed */
+    .page {
+        max-width: 70%;
+    }
     .card {
         width: 90%; /* Reduce width to fit small screens */
         margin: 10px; /* Add some margin */
@@ -239,7 +242,7 @@ nav a:hover img {
     padding-bottom: 70px;
     max-height: calc(100vh - 130px); /* Adjusted to account for the fixed header and footer */
     overflow-y: auto;
-    width: 100%; /* Ensure it takes full width */
+    width: 90%; /* Ensure it takes full width */
     /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
