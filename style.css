@@ -57,6 +57,7 @@ main {
 #contentArea {
     width: 100%; /* Ensure it takes full width */
     max-width: 95%; /* Set a maximum width for better readability */
+    min-width: 90%;
     margin: 0 auto; /* Center the content */
 }
 
