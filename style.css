@@ -57,7 +57,6 @@ main {
     width: 100%; /* Ensure it takes full width */
     max-width: 90%; /* Set a maximum width for better readability */
     margin: 0 auto; /* Center the content */
-    padding: 0 20px; /* Horizontal padding for inner content */
 }
 
 h2 {
