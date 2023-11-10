@@ -83,19 +83,14 @@ button:hover {
 
 /* Card Styles */
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
     border: 1px solid #444;
     background-color: #2a2a2a;
-    margin-right: auto; /* Centering */
-    margin-left: auto; /* Centering */
+    margin-right: auto;
+    margin-left: auto;
     border-radius: 12px;
     max-width: 40em;
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     transform-origin: top center;
 }
@@ -353,6 +348,7 @@ input[type="checkbox"]:checked::after {
     color: #E0E0E0; /* Light text */
     font-size: 1rem;
     height: 100%; /* Ensure full height */
+    min-width: 10%;
 }
 
 /* Card Styles */
@@ -491,10 +487,12 @@ input[type="checkbox"]:checked::after {
 .prediction-title {
     color: #B0B0B0; /* Lighter text for the title */
     font-weight: bold;
+    padding-left: 1em;
 }
 
 .prediction-value {
     color: #E0E0E0; /* Standard text color for the values */
+    padding-right: 1em;
 }
 
 /* Last item should not have a border */
