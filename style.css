@@ -218,7 +218,7 @@ nav a:hover img {
     }
 
     nav a img {
-        width: 16px; /* Adjust image size */
+        width: 20%px; /* Adjust image size */
     }
 
     /* Adjust footer layout */
@@ -308,7 +308,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* Style for checkboxes */
 input[type="checkbox"] {
     appearance: none;
-    width: 20px;
+    width: 2%;
     height: 20px;
     background-color: #3A3A3A;
     border: 2px solid #E0E0E0;
@@ -328,7 +328,7 @@ input[type="checkbox"]:checked::after {
     position: absolute;
     left: 5px;
     top: 1px;
-    width: 6px;
+    width: 30%;
     height: 12px;
     border: solid #181818;
     border-width: 0 2px 2px 0;
@@ -371,7 +371,7 @@ input[type="checkbox"]:checked::after {
 /* Details Toggle Styles */
 .toggle-icon {
     display: inline-block;
-    width: 16px;
+    width: 50%;
     height: 16px;
     background-image: url('path_to_your_icon.png');
     transition: transform 0.3s ease;
@@ -412,7 +412,7 @@ input[type="checkbox"]:checked::after {
     border: 1px solid #444;
     border-radius: 5px;
     width: 100%;
-    max-width: 400px;
+    max-width: 70%;
     margin: 0 auto 20px auto; /* Centering and margin at bottom */
     align-items: center; /* Center-align children vertically */
     position: relative; /* Relative positioning for this container */
