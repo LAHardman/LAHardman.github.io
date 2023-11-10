@@ -6,6 +6,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0; /* Reset default margin */
     padding: 0; /* Reset default padding */
+    min-width: none;
 }
 
 header, footer {
