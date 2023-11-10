@@ -55,7 +55,7 @@ main {
 
 #contentArea {
     width: 100%; /* Ensure it takes full width */
-    max-width: 80%; /* Set a maximum width for better readability */
+    max-width: 90%; /* Set a maximum width for better readability */
     margin: 0 auto; /* Center the content */
     padding: 0 20px; /* Horizontal padding for inner content */
 }
@@ -93,7 +93,7 @@ button:hover {
     margin-right: auto; /* Centering */
     margin-left: auto; /* Centering */
     border-radius: 12px;
-    max-width: 50%;
+    max-width: 40em;
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
     transition: transform 0.3s;
