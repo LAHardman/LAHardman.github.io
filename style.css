@@ -237,7 +237,7 @@ nav a:hover img {
     padding-bottom: 70px;
     max-height: calc(100vh - 130px); /* Adjusted to account for the fixed header and footer */
     overflow-y: auto;
-    width: 90%; /* Ensure it takes full width */
+    width: 100%; /* Ensure it takes full width */
     /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -348,7 +348,7 @@ input[type="checkbox"]:checked::after {
     color: #E0E0E0; /* Light text */
     font-size: 1rem;
     height: 100%; /* Ensure full height */
-    min-width: 10%;
+    min-width: none;
 }
 
 /* Card Styles */
